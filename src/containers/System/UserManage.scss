@@ -1,0 +1,53 @@
+.users-container{
+
+  .add-user{
+    padding :3px 17px;
+
+  }
+  
+}
+.form-row {
+    display: flex;
+    width: calc(100% - 7px);
+}
+.button_padding {
+  padding: 0px 13px;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+  .btnn-edit {
+    padding: 3px 19px;
+    margin: 0 5px;
+
+        i { margin: 5px; }
+   
+    }
+    
+    .btnn-delete {
+        padding: 3px 19px;
+        margin: 0 5px;
+
+        i { margin: 5px; }
+    }
+
