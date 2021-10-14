@@ -39,7 +39,21 @@
                 "handbook":"Cẩm nang",
                 "manage-handbook":"Quản lý cẩm nang"
 
-            }
+            }  
+    }, 
+    
+    "admin-form":{
+        "email":"Email",
+        "first-name":"Tên",
+        "last-name":"Họ",
+        "password":"Mật khẩu",
+        "address":"Địa chỉ",
+        "image": "Ảnh",
+        "gender":"Giới tính",
+        "Role":"Vai trò",
+        "sdt":"SDT",
+        "title":"Chức danh"
+
     }
     
    

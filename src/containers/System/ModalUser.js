@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import {emitter} from "../../utils/emitter";
-
+import { emitter } from "../../utils/emitter";
 
 class ModalUser extends Component {
   constructor(props) {
@@ -14,27 +13,27 @@ class ModalUser extends Component {
       lastName: "",
       address: "",
       password: "",
-    }
+    };
     this.listenToEmmiter();
   }
-  listenToEmmiter(){
-    emitter.on('EVENT_CLEAR_MODAL_DATA',() =>{
+  listenToEmmiter() {
+    emitter.on("EVENT_CLEAR_MODAL_DATA", () => {
       // reset state
-    this.setState({
+      this.setState({
         email: "",
         firstName: "",
         lastName: "",
         address: "",
         password: "",
-      })
-    })
+      });
+    });
   }
 
   componentDidMount() {}
 
   toggle = () => {
     this.props.toggleFromParent();
-  }
+  };
 
   handleOnChangeInput = (event, id) => {
     let copyState = { ...this.state };
@@ -42,7 +41,7 @@ class ModalUser extends Component {
     this.setState({
       ...copyState,
     });
-  }
+  };
 
   checkValidateInput = () => {
     let isValid = true;
@@ -57,22 +56,17 @@ class ModalUser extends Component {
     return isValid;
   };
 
-
   handleCreateUser = () => {
     let isValid = this.checkValidateInput();
-    if(isValid === true){    
-        //call api create modal
+    if (isValid === true) {
+      //call api create modal
       this.props.createNewUser(this.state); //truyeefn state cho thenf cha
-
-
-
     }
   };
 
   render() {
     return (
       <Modal isOpen={this.props.isOpen} toggle={() => this.toggle()} size="lg">
-   
         <ModalHeader toggle={() => this.toggle()}>Modal title</ModalHeader>
         <ModalBody>
           <div className="container ">
@@ -81,7 +75,7 @@ class ModalUser extends Component {
                 <form>
                   <div className="form-row">
                     <div className="form-group col-md-6">
-                      <label for="inputEmail4">Email</label>
+                      <label>Email</label>
                       <input
                         required
                         type="email"
@@ -96,7 +90,7 @@ class ModalUser extends Component {
                       />
                     </div>
                     <div className="form-group col-md-6 mx-2">
-                      <label for="inputPassword4">Password</label>
+                      <label>Password</label>
                       <input
                         type="password"
                         name="password"
@@ -113,7 +107,7 @@ class ModalUser extends Component {
                   </div>
                   <div className="form-row">
                     <div className="form-group col-md-6">
-                      <label for="inputEmail4">First name</label>
+                      <label>First name</label>
                       <input
                         required
                         type="text"
@@ -128,7 +122,7 @@ class ModalUser extends Component {
                       />
                     </div>
                     <div className="form-group col-md-6 mx-2">
-                      <label for="inputPassword4">Last name</label>
+                      <label>Last name</label>
                       <input
                         required
                         type="text"
@@ -144,8 +138,7 @@ class ModalUser extends Component {
                     </div>
                   </div>
                   <div className="form-group">
-                   
-                    <label for="inputAddress">Address</label>
+                    <label>Address</label>
                     <input
                       required
                       type="text"

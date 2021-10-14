@@ -41,5 +41,20 @@
             "manage-handbook":"Manage handbook"
 
         }
+
+        
+    },
+    "admin-form":{
+        "email":"Email",
+        "first-name":"First name",
+        "last-name":"Last name",
+        "password":"Password",
+        "address":"Address",
+        "image": "AVATAR",
+        "gender":"SEX",
+        "Role":"Role",
+        "sdt":"SDT",
+        "title":"Title"
+
     }
 }
