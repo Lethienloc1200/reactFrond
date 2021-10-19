@@ -1,0 +1,9 @@
+.registerrr {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 40px auto;
+  .form-row {
+    flex-wrap: unset !important; //ghi đè
+  }
+}

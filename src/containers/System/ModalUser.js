@@ -81,7 +81,6 @@ class ModalUser extends Component {
                         type="email"
                         name="email"
                         className="form-control"
-                        id="inputEmail4"
                         placeholder="Email"
                         onChange={(event) => {
                           this.handleOnChangeInput(event, "email");
@@ -113,7 +112,6 @@ class ModalUser extends Component {
                         type="text"
                         name="firstName"
                         className="form-control"
-                        id="inputEmail4"
                         placeholder="Email"
                         onChange={(event) => {
                           this.handleOnChangeInput(event, "firstName");
