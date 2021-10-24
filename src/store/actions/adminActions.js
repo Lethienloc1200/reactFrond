@@ -4,6 +4,8 @@ import {
   createNewUserService,
   getAllUsers,
   deleteUserService,
+  editUserService,
+  getTopDoctorHomeService,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 export const fechGenderStart = () => {
@@ -85,7 +87,7 @@ export const createNewUser = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await createNewUserService(data);
-      console.log("hoidanit check redux create", res);
+      console.log("abc check redux create", res);
 
       if (res && res.errCode === 0) {
         toast.success("Create a new user succeed !");
@@ -104,7 +106,7 @@ export const registerNewUser = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await createNewUserService(data);
-      console.log("hoidanit check redux create", res);
+      console.log("abc check redux create", res);
 
       if (res && res.errCode === 0) {
         dispatch(saveUserSuccess());
@@ -129,7 +131,8 @@ export const fetchAllUserStart = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await getAllUsers("ALL");
-
+      // let res1 = await getTopDoctorHomeService(3);
+      // console.log("resss1 ", res1);
       if (res && res.errCode === 0) {
         dispatch(fetchAllUserSuccess(res.users.reverse()));
       } else {
@@ -154,7 +157,7 @@ export const deleteAUser = (userId) => {
   return async (dispatch, getState) => {
     try {
       let res = await deleteUserService(userId);
-      console.log("hoidanit check redux create", res);
+      console.log("abc check redux create", res);
 
       if (res && res.errCode === 0) {
         toast.success("Delete a user succeed !");
@@ -176,3 +179,57 @@ export const deleteASuccess = () => ({
 export const deleteAFailed = () => ({
   type: actionTypes.DELETE_USER_FAIDED,
 });
+
+// =====edit a user ===============
+
+export const editAUser = (data) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await editUserService(data);
+      console.log("abc check redux create", res);
+
+      if (res && res.errCode === 0) {
+        toast.success("Update a user succeed !");
+        dispatch(editASuccess());
+        dispatch(fetchAllUserStart());
+      } else {
+        dispatch(editAFailed());
+        toast.success("edit a user error !");
+      }
+    } catch (error) {
+      dispatch(editAFailed());
+    }
+  };
+};
+
+export const editASuccess = () => ({
+  type: actionTypes.EDIT_USER_SUCCESS,
+});
+export const editAFailed = () => ({
+  type: actionTypes.EDIT_USER_FAIDED,
+});
+
+// =======fech top doctor============
+export const fetchTopDoctor = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getTopDoctorHomeService("");
+      // console.log("top doctor ", res);
+      if (res && res.errCode === 0) {
+        dispatch({
+          type: actionTypes.FETCH_TOP_DOCTOR_SUCCESS,
+          dataDoctors: res.data,
+        });
+      } else {
+        dispatch({
+          type: actionTypes.FETCH_TOP_DOCTOR_FAIDED,
+        });
+      }
+    } catch (error) {
+      console.log("Fetch doctor failded", error);
+      dispatch({
+        type: actionTypes.FETCH_TOP_DOCTOR_FAIDED,
+      });
+    }
+  };
+};

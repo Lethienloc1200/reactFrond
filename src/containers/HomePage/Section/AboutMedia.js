@@ -20,9 +20,9 @@ class AboutMedia extends Component {
                 height="100%"
                 src="https://www.youtube.com/embed/r7HA_9rKIMI"
                 title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                // frameborder="0"
+                // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                // allowfullscreen
               ></iframe>
             </div>
             <div className="right">
