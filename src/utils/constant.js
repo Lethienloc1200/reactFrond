@@ -5,6 +5,7 @@ export const path = {
   SYSTEM: "/system",
   HOMEPAGE: "/home",
   REGISTER: "/register",
+  DETAIL_DOCTOR: "/detail-doctor/:id",
 };
 
 export const LANGUAGES = {
@@ -13,7 +14,7 @@ export const LANGUAGES = {
 };
 
 export const CRUD_ACTIONS = {
-  CREATE: "ADD",
+  CREATE: "CREATE",
   EDIT: "EDIT",
   DELETE: "DELETE",
   READ: "READ",

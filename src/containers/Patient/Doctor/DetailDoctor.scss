@@ -1,0 +1,47 @@
+.doctor-detail-container {
+  width: 100%;
+  margin: 20px auto;
+  height: 600px;
+
+  .intro-doctor {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    padding: 100px;
+    background-color: #9999;
+    .left {
+      width: 15%;
+
+      .img-doctor {
+        // background-image: url("../../../assets/images/MedicalFacility/114348-bv-viet-duc.jpg");
+        margin: 20px 0px 0px 20px;
+        width: 180px;
+        border-radius: 50%;
+        height: 180px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+    .right {
+      width: 85%;
+      p {
+        margin: 10px 10px 0px 0px !important;
+        padding: 0;
+      }
+    }
+  }
+  .schedule-doctor {
+  }
+  .detail-infor-doctor {
+    padding: 130px;
+    background: #926a6a2b;
+    img {
+      margin: 60px;
+      width: 80%;
+      height: 500px;
+      object-fit: cover;
+    }
+  }
+  .comment-doctor {
+  }
+}

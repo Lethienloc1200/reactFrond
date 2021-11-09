@@ -4,6 +4,7 @@ import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
+import { withRouter } from "react-router";
 class PopularDoctor extends Component {
   constructor(props) {
     super(props);
@@ -21,11 +22,15 @@ class PopularDoctor extends Component {
   componentDidMount() {
     this.props.loadTopDoctors();
   }
+  handleViewDetailDotor = (doctor) => {
+    console.log("view detail Doctor", doctor.id);
+    this.props.history.push(`/detail-doctor/${doctor.id}`);
+  };
   render() {
     let { language } = this.props;
     let { arrDoctors } = this.state;
     // arrDoctors = arrDoctors.concat(arrDoctors).concat(arrDoctors);
-    console.log("check toptopDoctorsRedux", this.props.topDoctorsRedux);
+    console.log("check toptopDoctorsReduxx", arrDoctors);
     return (
       <div className="section-share popular-doctor">
         <div className="section-container">
@@ -49,6 +54,7 @@ class PopularDoctor extends Component {
                   <div
                     key={index}
                     className="customize-img start popular-doctor "
+                    onClick={() => this.handleViewDetailDotor(item)}
                   >
                     <div className="border-doctor">
                       <div
@@ -85,4 +91,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PopularDoctor);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(PopularDoctor)
+);
