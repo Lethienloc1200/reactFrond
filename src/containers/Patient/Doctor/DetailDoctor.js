@@ -4,11 +4,14 @@ import HomeHeader from "../../HomePage/HomeHeader";
 import "./DetailDoctor.scss";
 import { LANGUAGES } from "../../../utils";
 import { getDetailInforDoctor } from "../../../services/userService";
+import DoctorSchedule from "../../../containers/Patient/Doctor/DoctorSchedule";
+
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       detailDoctor: {},
+      curentDoctorId: -1,
     };
   }
 
@@ -19,6 +22,7 @@ class DetailDoctor extends Component {
       this.props.match.params.id
     ) {
       let id = this.props.match.params.id;
+      this.setState({ curentDoctorId: id });
       let res = await getDetailInforDoctor(id);
 
       if (res && res.errCode === 0) {
@@ -30,7 +34,7 @@ class DetailDoctor extends Component {
   }
   componentDidUpdate(prevProps, prevState, snapshot) {}
   render() {
-    console.log("test ok ", this.state);
+    // console.log("test ok ", this.state);
     let { detailDoctor } = this.state;
     let { language } = this.props;
     let nameVi = "",
@@ -64,7 +68,12 @@ class DetailDoctor extends Component {
               )) || <p>"Chưa có mô tả nào😒😒"</p>}
             </div>
           </div>
-          <div className="schedule-doctor"></div>
+          <div className="schedule-doctor">
+            <div className="content-left">
+              <DoctorSchedule doctorIdFromParent={this.state.curentDoctorId} />
+            </div>
+            <div className="content-right">abc</div>
+          </div>
           <div className="detail-infor-doctor">
             {detailDoctor &&
               detailDoctor.MarkDown &&

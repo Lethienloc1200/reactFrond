@@ -1,0 +1,18 @@
+.manage-schedule-container {
+  .container {
+    .body-schedule {
+      height: auto;
+      margin: 0;
+      padding: 0;
+
+      .editTime {
+        margin: 10px 10px 10px 0px;
+
+        flex-wrap: wrap;
+        &.active {
+          background-color: orange;
+        }
+      }
+    }
+  }
+}

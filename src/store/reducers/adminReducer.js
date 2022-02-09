@@ -9,6 +9,8 @@ const initialState = {
   topDoctors: [],
   allDoctors: [],
   listDoctors: [],
+  allScheduleTime: [],
+  allRequiredDoctorInfor: [],
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -94,7 +96,33 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    //============fech all schedule time=======
+    case actionTypes.FETCH_ALL_SCHEDULE_HOUR_SUCCESS:
+      state.allScheduleTime = action.dataTime;
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_ALL_SCHEDULE_HOUR_FAIDED:
+      state.allScheduleTime = [];
+      return {
+        ...state,
+      };
+    // 3 funtion==========
+    case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS:
+      state.allRequiredDoctorInfor = action.data;
+      console.log(
+        ">>> hoi dan it channel: fetch required doctor data action:",
+        action
+      );
 
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_FAIDED:
+      state.allRequiredDoctorInfor = [];
+      return {
+        ...state,
+      };
     default:
       return state;
   }
