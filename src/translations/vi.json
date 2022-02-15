@@ -63,6 +63,16 @@
     "manage-schedule":
     {
         "title":"Quản lý kế hoạch khám bệnh"
+    },
+    "infor-doctor-modal":
+    {
+        "name":"Họ và tên",
+        "phone":"SDT",
+        "email-address":"Địa chỉ email",
+        "address": "Địa chỉ liên hệ",
+        "reason":"Lý do khám",
+        "sex":"Giới tính",
+        "bookfor":"Đạt cho ai"
     }
     
    

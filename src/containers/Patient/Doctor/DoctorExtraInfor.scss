@@ -1,0 +1,55 @@
+.doctor-extra-container {
+  padding-left: 15px;
+
+  .content-up {
+    // background: red;
+
+    padding-bottom: 20px;
+    .title-address {
+      color: #444;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .title-address-description {
+      color: black;
+    }
+    .address-detail {
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
+  .content-down {
+    // background: red;
+    width: 500px;
+    border: 1px solid rgba(128, 128, 128, 0.367);
+    padding: 5px;
+    .title-price {
+      font-size: 12px;
+      font-weight: bold;
+
+      .detail-show {
+        color: rgb(0, 55, 255);
+        cursor: pointer;
+      }
+    }
+    .price-title-250 {
+      float: right;
+    }
+    .price-price {
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .text-dscript {
+      border: 1px solid rgba(201, 189, 189, 0.218);
+      padding: 5px;
+      color: #333333;
+      font-size: 12px;
+    }
+    .detail-hide {
+      color: rgb(0, 55, 255);
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+  }
+}

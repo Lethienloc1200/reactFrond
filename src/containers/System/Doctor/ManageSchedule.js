@@ -182,10 +182,7 @@ class ManageSchedule extends Component {
                 );
               })}
           </div>
-          <button
-            className="btn btn-primary mt-3"
-            onClick={() => this.handleSaveSchedule()}
-          >
+          <button className="btn btn-primary mt-3" onClick={() => this.handleSaveSchedule()}>
             Lưu thông tin
           </button>
         </div>

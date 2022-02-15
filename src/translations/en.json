@@ -65,5 +65,17 @@
     "manage-schedule":
     {
         "title":"Manage schedule doctor"
+    },
+    "infor-doctor-modal":
+    {
+        "name":"Full name",
+        "phone":"SDT",
+        "email-address":"Email address",
+        "address": "Contact address",
+        "reason":"Medical examination reason",
+        "sex":"sex",
+        "bookfor":"Booking for"
+
+
     }
 }

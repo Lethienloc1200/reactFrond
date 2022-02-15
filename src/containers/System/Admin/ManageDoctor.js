@@ -143,51 +143,51 @@ class ManageDoctor extends Component {
   // handle selectedOption
   handleChangeSelect = async (selectedOption) => {
     this.setState({ selectedOption });
-    // let { listPayment, listPrice, listProvince } = this.state;
+    let { listPayment, listPrice, listProvince } = this.state;
 
     let res = await getDetailInforDoctor(selectedOption.value);
     if (res && res.errCode === 0 && res.data && res.data.MarkDown) {
       let markdown = res.data.MarkDown;
-      // let addressClinic = "",
-      //   nameClinic = "",
-      //   note = "",
-      //   paymentId = "",
-      //   priceId = "",
-      //   provinceId = "",
-      //   selectedProvince = "",
-      //   selectedPayment = "",
-      //   selectedPrice = "";
+      let addressClinic = "",
+        nameClinic = "",
+        note = "",
+        paymentId = "",
+        priceId = "",
+        provinceId = "",
+        selectedProvince = "",
+        selectedPayment = "",
+        selectedPrice = "";
 
-      // if (res.data.DoctorInfor) {
-      //   addressClinic = res.data.DoctorInfor.addressClinic;
-      //   nameClinic = res.data.DoctorInfor.nameClinic;
-      //   note = res.data.DoctorInfor.note;
-      //   paymentId = res.data.DoctorInfor.paymentId;
-      //   priceId = res.data.Doctor_Infor.priceId;
-      //   provinceId = res.data.DoctorInfor.provinceId;
+      if (res.data.DoctorInfor) {
+        addressClinic = res.data.DoctorInfor.addressClinic;
+        nameClinic = res.data.DoctorInfor.nameClinic;
+        note = res.data.DoctorInfor.note;
+        paymentId = res.data.DoctorInfor.paymentId;
+        priceId = res.data.DoctorInfor.priceId;
+        provinceId = res.data.DoctorInfor.provinceId;
 
-      //   selectedPayment = listPayment.find((item) => {
-      //     return item && item.value === paymentId;
-      //   });
-      //   selectedPrice = listPrice.find((item) => {
-      //     return item && item.value === priceId;
-      //   });
-      //   selectedProvince = listProvince.find((item) => {
-      //     return item && item.value === provinceId;
-      //   });
-      // }
+        selectedPayment = listPayment.find((item) => {
+          return item && item.value === paymentId;
+        });
+        selectedPrice = listPrice.find((item) => {
+          return item && item.value === priceId;
+        });
+        selectedProvince = listProvince.find((item) => {
+          return item && item.value === provinceId;
+        });
+      }
       this.setState({
         contentHTML: markdown.contentHTML,
         contentMarkdown: markdown.contentMarkdown,
         description: markdown.description,
         hasOldData: true,
 
-        // addressClinic: addressClinic,
-        // nameClinic: nameClinic,
-        // note: note,
-        // selectedPayment: selectedPayment,
-        // selectedPrice: selectedPrice,
-        // selectedProvince: selectedProvince,
+        addressClinic: addressClinic,
+        nameClinic: nameClinic,
+        note: note,
+        selectedPayment: selectedPayment,
+        selectedPrice: selectedPrice,
+        selectedProvince: selectedProvince,
       });
     } else {
       this.setState({
@@ -195,9 +195,9 @@ class ManageDoctor extends Component {
         contentMarkdown: "",
         description: "",
         hasOldData: false,
-        // addressClinic: "",
-        // nameClinic: "",
-        // note: "",
+        addressClinic: "",
+        nameClinic: "",
+        note: "",
       });
     }
   };

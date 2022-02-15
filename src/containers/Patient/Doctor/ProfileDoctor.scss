@@ -1,0 +1,25 @@
+.doctor-detail-container-modal {
+  margin: 0;
+  padding: 0;
+
+  .intro-doctor {
+    // justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+
+    .left {
+      width: 100px;
+
+      .img-doctor {
+        width: 80px;
+
+        height: 80px;
+        object-fit: cover;
+        background-size: cover;
+        border-radius: 50%;
+      }
+    }
+    .right {
+    }
+  }
+}

@@ -5,7 +5,7 @@ import "./DetailDoctor.scss";
 import { LANGUAGES } from "../../../utils";
 import { getDetailInforDoctor } from "../../../services/userService";
 import DoctorSchedule from "../../../containers/Patient/Doctor/DoctorSchedule";
-
+import DoctorExtraInfor from "../../../containers/Patient/Doctor/DoctorExtraInfor";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -16,11 +16,7 @@ class DetailDoctor extends Component {
   }
 
   async componentDidMount() {
-    if (
-      this.props.match &&
-      this.props.match.params &&
-      this.props.match.params.id
-    ) {
+    if (this.props.match && this.props.match.params && this.props.match.params.id) {
       let id = this.props.match.params.id;
       this.setState({ curentDoctorId: id });
       let res = await getDetailInforDoctor(id);
@@ -72,18 +68,18 @@ class DetailDoctor extends Component {
             <div className="content-left">
               <DoctorSchedule doctorIdFromParent={this.state.curentDoctorId} />
             </div>
-            <div className="content-right">abc</div>
+            <div className="content-right">
+              <DoctorExtraInfor doctorIdFromParent={this.state.curentDoctorId} />
+            </div>
           </div>
           <div className="detail-infor-doctor">
-            {detailDoctor &&
-              detailDoctor.MarkDown &&
-              detailDoctor.MarkDown.contentHTML && (
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: detailDoctor.MarkDown.contentHTML,
-                  }}
-                ></div>
-              )}
+            {detailDoctor && detailDoctor.MarkDown && detailDoctor.MarkDown.contentHTML && (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: detailDoctor.MarkDown.contentHTML,
+                }}
+              ></div>
+            )}
           </div>
           <div className="comment-doctor"></div>
         </div>
